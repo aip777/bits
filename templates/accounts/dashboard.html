@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %} | {{ user.first_name }} {% endblock %}
+{% block content %}
+
+
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">User Dashboard</h1>
+          <p class="lead">Django Account</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="dashboard" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Welcome {{ user.first_name }}</h2>
+          {% if accountinfo %}
+            <p>Account List</p>
+            <table class="table table-bordered">
+              <tr>
+                  <th scope="col">Username</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+
+              </tr>
+              <tbody>
+
+                {% for contact in accountinfo %}
+                  <tr>
+                    <td>{{ contact.username }}</td>
+                    <td>{{ contact.first_name }}</td>
+                    <td>{{ contact.last_name }}</td>
+                    <td>{{ contact.email }}</td>
+
+
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% else %}
+            <p>You have not made any inquiries</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  {% endblock %}
+
+
