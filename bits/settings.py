@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'brac',
     'accounts',
-    'contacts',
 ]
 
 MIDDLEWARE = [
